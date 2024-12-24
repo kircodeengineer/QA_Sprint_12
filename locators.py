@@ -23,6 +23,12 @@ class Xpath:
                                 "and "
                                 "text()='Войти в аккаунт']") # кнопка Войти в аккаунт на титульной странице
         personal_account_href = ".//p[@class='AppHeader_header__linkText__3q_va ml-2' and text()='Личный Кабинет']" # кнопка Личный кабинет для перехода на страницу входа в аккаунт
+        not_selected_buns = ".//section[@class='BurgerIngredients_ingredients__1N8v2']//div[@class='tab_tab__1SPyG  pt-4 pr-10 pb-4 pl-10 noselect']/span[text()='Булки']"
+        not_selected_toppings = ".//section[@class='BurgerIngredients_ingredients__1N8v2']//div[@class='tab_tab__1SPyG  pt-4 pr-10 pb-4 pl-10 noselect']/span[text()='Начинки']"
+        not_selected_sauce = ".//section[@class='BurgerIngredients_ingredients__1N8v2']//div[@class='tab_tab__1SPyG  pt-4 pr-10 pb-4 pl-10 noselect']/span[text()='Соусы']"
+        selected_buns = ".//section[@class='BurgerIngredients_ingredients__1N8v2']//div[@class='tab_tab__1SPyG tab_tab_type_current__2BEPc pt-4 pr-10 pb-4 pl-10 noselect']/span[text()='Булки']"
+        selected_toppings = ".//section[@class='BurgerIngredients_ingredients__1N8v2']//div[@class='tab_tab__1SPyG tab_tab_type_current__2BEPc pt-4 pr-10 pb-4 pl-10 noselect']/span[text()='Начинки']"
+        selected_sauce = ".//section[@class='BurgerIngredients_ingredients__1N8v2']//div[@class='tab_tab__1SPyG tab_tab_type_current__2BEPc pt-4 pr-10 pb-4 pl-10 noselect']/span[text()='Соусы']"
 
     class FeedPage:
         personal_account_href = ".//p[@class='AppHeader_header__linkText__3q_va ml-2' and text()='Личный Кабинет']" # кнопка Личный кабинет для перехода на страницу входа в аккаунт

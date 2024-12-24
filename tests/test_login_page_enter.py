@@ -24,7 +24,7 @@ def test_enter_login_page_from_feed_page_push_personal_account_href(feed_page_dr
 
 def test_enter_login_page_from_register_page_push_registration_button(register_page_driver):
     email_field = register_page_driver.find_element(By.XPATH, Xpath.RegisterPage.email_field)
-    email_field.send_keys(f"lolkasapsula@kek.qu")
+    email_field.send_keys(f"plolkasapsula@kek.qu")
     name_field = register_page_driver.find_element(By.XPATH, Xpath.RegisterPage.name_field)
     name_field.send_keys(f"Emit")
     pass_field = register_page_driver.find_element(By.XPATH, Xpath.RegisterPage.pass_field)
