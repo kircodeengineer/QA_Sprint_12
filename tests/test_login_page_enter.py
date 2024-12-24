@@ -3,6 +3,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 
 from locators import Css, Xpath, Url
+from account_profile_data_generator import RandomAccountProfileData
 
 def test_enter_login_page_from_main_page_push_enter_account_button(main_page_driver):
     enter_account_button = main_page_driver.find_element(By.XPATH, Xpath.MainPage.enter_account_button)
@@ -24,11 +25,11 @@ def test_enter_login_page_from_feed_page_push_personal_account_href(feed_page_dr
 
 def test_enter_login_page_from_register_page_push_registration_button(register_page_driver):
     email_field = register_page_driver.find_element(By.XPATH, Xpath.RegisterPage.email_field)
-    email_field.send_keys(f"plolkasapsula@kek.qu")
+    email_field.send_keys(RandomAccountProfileData.get_email())
     name_field = register_page_driver.find_element(By.XPATH, Xpath.RegisterPage.name_field)
-    name_field.send_keys(f"Emit")
+    name_field.send_keys(RandomAccountProfileData.get_name())
     pass_field = register_page_driver.find_element(By.XPATH, Xpath.RegisterPage.pass_field)
-    pass_field.send_keys(f"lolkek")
+    pass_field.send_keys(RandomAccountProfileData.get_pass())
 
     register_button = register_page_driver.find_element(By.CSS_SELECTOR, Css.RegisterPage.registration_button)
     register_button.click()
