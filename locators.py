@@ -16,3 +16,8 @@ class Xpath:
         email_field = "(.//div[@class='input pr-6 pl-6 input_type_text input_size_default'])[2]/input"  # Поле ввода email
         name_field = "(.//div[@class='input pr-6 pl-6 input_type_text input_size_default'])[1]/input"  # Поле ввода Имя
         pass_field = ".//input[@type='password' and @name='Пароль']"  # Поле ввода Пароль
+
+class Url:
+    main_page = "https://stellarburgers.nomoreparties.site"
+    login_page = f"{main_page}/login"
+    register_page = f"{main_page}/register"

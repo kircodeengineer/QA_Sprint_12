@@ -5,12 +5,12 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 
-from locators import Css, Xpath
+from locators import Css, Xpath, Url
 
 @pytest.fixture(scope='function')
 def register_page_driver():
     driver = webdriver.Chrome()
-    driver.get("https://stellarburgers.nomoreparties.site/")
+    driver.get(Url.main_page)
 
     enter_account_button = driver.find_element(By.CSS_SELECTOR, Css.TitlePage.enter_account_button)
     enter_account_button.click()
