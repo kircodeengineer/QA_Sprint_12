@@ -1,5 +1,3 @@
-import pytest
-
 from locators import Css, Xpath, Url
 
 from selenium.webdriver.common.by import By
@@ -8,7 +6,7 @@ from selenium.webdriver.support import expected_conditions
 
 def test_valid_input_data(register_page_driver):
     email_field = register_page_driver.find_element(By.XPATH, Xpath.RegisterPage.email_field)
-    email_field.send_keys(f"lolkasa@kek.qu")
+    email_field.send_keys(f"lolkasapsr@kek.qu")
     name_field = register_page_driver.find_element(By.XPATH, Xpath.RegisterPage.name_field)
     name_field.send_keys(f"Emit")
     pass_field = register_page_driver.find_element(By.XPATH, Xpath.RegisterPage.pass_field)
