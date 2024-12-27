@@ -13,28 +13,32 @@ def feed_page_driver():
     driver = webdriver.Chrome()
     driver.get(Url.feed_page)
     WebDriverWait(driver, 3).until(expected_conditions.url_to_be(Url.feed_page))
-    return driver
+    yield driver
+    driver.quit()
 
 @pytest.fixture(scope='function')
 def forgot_password_page_driver():
     driver = webdriver.Chrome()
     driver.get(Url.forgot_password_page)
     WebDriverWait(driver, 3).until(expected_conditions.url_to_be(Url.forgot_password_page))
-    return driver
+    yield driver
+    driver.quit()
 
 @pytest.fixture(scope='function')
 def login_page_driver():
     driver = webdriver.Chrome()
     driver.get(Url.login_page)
     WebDriverWait(driver, 3).until(expected_conditions.url_to_be(Url.login_page))
-    return driver
+    yield driver
+    driver.quit()
 
 @pytest.fixture(scope='function')
 def main_page_driver():
     driver = webdriver.Chrome()
     driver.get(Url.main_page)
     WebDriverWait(driver, 3).until(expected_conditions.url_to_be(Url.main_page))
-    return driver
+    yield driver
+    driver.quit()
 
 @pytest.fixture(scope='function')
 def logged_in_main_page_driver():
@@ -63,14 +67,16 @@ def logged_in_main_page_driver():
     enter_button = driver.find_element(By.XPATH, Xpath.LoginPage.enter_button)
     enter_button.click()
     WebDriverWait(driver, 3).until(expected_conditions.url_to_be(Url.main_page))
-    return driver
+    yield driver
+    driver.quit()
 
 @pytest.fixture(scope='function')
 def register_page_driver():
     driver = webdriver.Chrome()
     driver.get(Url.register_page)
     WebDriverWait(driver, 3).until(expected_conditions.url_to_be(Url.register_page))
-    return driver
+    yield driver
+    driver.quit()
 
 
 

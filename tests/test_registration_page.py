@@ -18,8 +18,6 @@ def test_registration_page_enter_valid_input_data(register_page_driver):
 
     WebDriverWait(register_page_driver, 3).until(expected_conditions.url_to_be(Url.login_page))
 
-    register_page_driver.quit()
-
 def test_registration_page_enter_bad_password_get_error(register_page_driver):
     pass_field = register_page_driver.find_element(By.XPATH, Xpath.RegisterPage.pass_field)
     pass_field.send_keys(f"123")
@@ -30,5 +28,3 @@ def test_registration_page_enter_bad_password_get_error(register_page_driver):
     input_error = register_page_driver.find_element(By.CSS_SELECTOR, Css.RegisterPage.registration_pass_error)
 
     assert input_error.text == 'Некорректный пароль'
-
-    register_page_driver.quit()
