@@ -11,34 +11,11 @@ import url
 
 
 @pytest.fixture(scope='function')
-def feed_page_driver():
+def page_driver(request):
     driver = webdriver.Chrome()
-    driver.get(url.FEED_PAGE)
-    WebDriverWait(driver, 3).until(expected_conditions.url_to_be(url.FEED_PAGE))
-    yield driver
-    driver.quit()
-
-@pytest.fixture(scope='function')
-def forgot_password_page_driver():
-    driver = webdriver.Chrome()
-    driver.get(url.FORGOT_PASSWORD_PAGE)
-    WebDriverWait(driver, 3).until(expected_conditions.url_to_be(url.FORGOT_PASSWORD_PAGE))
-    yield driver
-    driver.quit()
-
-@pytest.fixture(scope='function')
-def login_page_driver():
-    driver = webdriver.Chrome()
-    driver.get(url.LOGIN_PAGE)
-    WebDriverWait(driver, 3).until(expected_conditions.url_to_be(url.LOGIN_PAGE))
-    yield driver
-    driver.quit()
-
-@pytest.fixture(scope='function')
-def main_page_driver():
-    driver = webdriver.Chrome()
-    driver.get(url.MAIN_PAGE)
-    WebDriverWait(driver, 3).until(expected_conditions.url_to_be(url.MAIN_PAGE))
+    current_url = request.param
+    driver.get(current_url)
+    WebDriverWait(driver, 3).until(expected_conditions.url_to_be(current_url))
     yield driver
     driver.quit()
 
@@ -70,14 +47,4 @@ def logged_in_main_page_driver():
     WebDriverWait(driver, 3).until(expected_conditions.url_to_be(url.MAIN_PAGE))
     yield driver
     driver.quit()
-
-@pytest.fixture(scope='function')
-def register_page_driver():
-    driver = webdriver.Chrome()
-    driver.get(url.REGISTER_PAGE)
-    WebDriverWait(driver, 3).until(expected_conditions.url_to_be(url.REGISTER_PAGE))
-    yield driver
-    driver.quit()
-
-
 
