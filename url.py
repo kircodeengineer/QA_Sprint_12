@@ -1,0 +1,6 @@
+MAIN_PAGE = "https://stellarburgers.nomoreparties.site/"
+FEED_PAGE = f"{MAIN_PAGE}feed"
+FORGOT_PASSWORD_PAGE = f"{MAIN_PAGE}forgot-password"
+LOGIN_PAGE = f"{MAIN_PAGE}login"
+REGISTER_PAGE = f"{MAIN_PAGE}register"
+ACCOUNT_PROFILE = f"{MAIN_PAGE}account/profile"
